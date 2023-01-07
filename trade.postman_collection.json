@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "1dccc0c1-fff4-451a-bdbe-5cc2f3518925",
+		"name": "trade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/update/price/4?price=19.12",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/update/price/4?price=19.12",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"update",
+						"price",
+						"4"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "19.12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/sell/order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"shareId\":1,\r\n    \"percent\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/sell/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sell",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/list/sell/orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/list/sell/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"list",
+						"sell",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/buy/order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":6,\r\n    \"sellOrderId\":5,\r\n    \"percent\":50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/buy/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"buy",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
