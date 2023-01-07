@@ -43,6 +43,9 @@ public class BuyOrderServiceImpl {
         BigDecimal toBuyQuantity = buyOrder.setShareQuantityGivenQuantity(percent,totalQuantity);
         BigDecimal totalPrice = buyOrder.getShare().getPrice().multiply(toBuyQuantity);
         User user = buyOrder.getUser();
+        if(buyOrder.getUser().getPortfolio()==null){
+            throw new BadRequestException("You should have registered portfolio to buy shares");
+        }
         if(totalPrice.compareTo(user.getBalance()) > 0){
             throw new BadRequestException("You dont have enough balance to buy this share");
         }
